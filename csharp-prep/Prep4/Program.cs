@@ -42,7 +42,7 @@ class Program
         //Output
 
         Console.WriteLine($"The sum is {sum}");
-        decimal average = sum/numbers.Count;
+        float average = sum/numbers.Count;
         Console.WriteLine($"The average is {average}");
         Console.WriteLine($"The largest number is {largestNumber}");
         Console.WriteLine($"THe smallest positive number is {smallestPosInt}");
