@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning04 World!");
+        WritingAssignment InterSpace = new WritingAssignment("Joe Dirt", "Black holes", " Center", "Describe how black holes create infinite density.\t[50]");
+        InterSpace.GetWritingInformation();
     }
 }
