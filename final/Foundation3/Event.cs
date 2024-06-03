@@ -7,20 +7,25 @@ public class Event
     private string _date;
     private string _time;
     private  Address EventAddress;
-    private string Title
+    protected string Title
     {
         get{return _title;}
-        private set { _title= value;}
+        set { _title= value;}
     }
-    private string Description
+    protected string Description
     {
         get{return _description;}
-        private set {_description =value;}
+        set {_description =value;}
     }
-    private string Time
+    protected string Time
     {
         get{return _time;}
-        private set{_time = value;}
+        set{_time = value;}
+    }
+    protected string Date
+    {
+        get{return _date;}
+        set{_date = value;}
     }
     public Event( string title,string description,string date, string time,Address address)
     {

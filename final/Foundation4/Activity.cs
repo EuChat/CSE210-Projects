@@ -1,10 +1,11 @@
-using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography;
+// using System.ComponentModel.DataAnnotations;
+// using System.Security.Cryptography;
 
 public abstract class Activity
 {
-    private string _date;
-    private int _length ;// in minutes
+    protected string _date;
+    protected double  _distance;// kilometres
+    protected int _length ;// in minutes
     public string Date
     {
         get{return _date; }
@@ -22,13 +23,18 @@ public abstract class Activity
         _date = date;
         _length = length;
     }
-    public abstract double GetDistance(); // in kilometers
-    public abstract double GetSpeed();// in kph
-    public abstract double GetPace(); int // in minutes per kilometer
-
-    public virtual string GetSummary()
+    public virtual double GetDistance()
     {
-        return $"{Date}({length}min):Distance: {GetDistance(): 0.0}miles, Speed:{GetSpeed():0.0}kph,Pace:{GetPace():0.0}min/kilometer";
+        return _distance;
+    } // in kilometers
+    public virtual double GetSpeed()
+    {
+        return _distance/_length* 60;
+    }// in kph
+    public abstract double GetPace(); // in minutes per kilometer
+    
+    public string GetSummary()
+    {
+        return $"{Date}({Length}min):Distance: {GetDistance(): 0.0}miles, Speed:{GetSpeed():0.0}kph,Pace:{GetPace():0.0}min/kilometer";
     }
-
 }

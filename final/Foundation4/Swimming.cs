@@ -8,12 +8,12 @@ public class Swimming  : Activity
         get { return _laps; }
         private set { _laps = value;}
     }
-    public Swimming(string date,int length,int laps): base (date,length)
+    public Swimming(string date,int length,int laps): base(date, length)
     {
-        Laps= laps;
+        _laps= laps;
     }
     public override double GetDistance()=> Laps* 50/1000.0 * 0.62;
-    public override double GetSpeed()=> (GetDistance() /Length)* 60;
+    public override double GetSpeed()=> GetDistance() /Length* 60;
     public override double GetPace()=> Length / GetDistance();
     
 }

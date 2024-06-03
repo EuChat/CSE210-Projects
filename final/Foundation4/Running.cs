@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations;
 
 public class Running : Activity
 {
-    private double  _distance;// kilometres
     public double Distance
     {
         get{return _distance; }
@@ -12,8 +11,6 @@ public class Running : Activity
     {
         _distance = distance;
     }
-    public override double GetDistance()=> distance;
-    public override double GetSpeed()=> (distance/length)* 60;
-    public override double GetPace()=> length /distance;
+    public override double GetPace()=> _length /_distance;
 
 }
